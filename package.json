@@ -1,0 +1,22 @@
+{
+  "name": "taxi-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ram-ka/taxi-scheduler.git"
+  },
+  "author": "adam.ramski@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ram-ka/taxi-scheduler/issues"
+  },
+  "homepage": "https://github.com/ram-ka/taxi-scheduler#readme",
+  "devDependencies": {
+    "electron": "^3.0.2"
+  }
+}

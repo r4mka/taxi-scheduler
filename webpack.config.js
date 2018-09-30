@@ -1,6 +1,5 @@
 const path = require('path');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const paths = {
@@ -24,10 +23,19 @@ const common = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        options: {
+          fix: true,
+          failOnError: true,
+        },
+      },
+      {
         test: /\.js$/,
         include: paths.src,
         loader: 'babel-loader',
-      }
+      },
     ],
   },
   plugins: [

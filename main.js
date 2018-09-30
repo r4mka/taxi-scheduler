@@ -1,3 +1,4 @@
+const path = require('path');
 const { app, BrowserWindow } = require('electron')
   
   // Keep a global reference of the window object, if you don't, the window will
@@ -9,7 +10,7 @@ const { app, BrowserWindow } = require('electron')
     win = new BrowserWindow({ width: 800, height: 600 })
   
     // and load the index.html of the app.
-    win.loadFile('index.html')
+    win.loadFile(path.resolve(__dirname, 'app', 'index.html'));
   
     // Open the DevTools.
     win.webContents.openDevTools()

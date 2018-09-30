@@ -14,7 +14,6 @@ const common = {
   output: {
     path: paths.app,
     filename: 'js/[name].js',
-    // publicPath: '/',
   },
   resolve: {
     modules: [paths.src, paths.node],
@@ -25,6 +24,7 @@ const common = {
       {
         enforce: 'pre',
         test: /\.js$/,
+        exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
           fix: true,
@@ -41,7 +41,7 @@ const common = {
   plugins: [
     new CopyWebpackPlugin([
       path.resolve(paths.src, 'index.html'),
-    ])
+    ]),
   ],
 };
 
@@ -50,7 +50,7 @@ const development = {
   devtool: 'eval-source-map',
   watch: true,
   watchOptions: {
-    ignored: /node_modules/
+    ignored: /node_modules/,
   },
 };
 
